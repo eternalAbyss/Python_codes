@@ -16,10 +16,12 @@ print(list_of_random_things[:-1])
 
 print('2' in list_of_random_things)
 print('3.4' in list_of_random_things)
+"""
+Strings are immutable and Lists are mutable
+Both strings and lists are ordered 
+order -> we can access the vlaue using indices
+"""
 
-# Strings are immutable and Lists are mutable
-# Both strings and lists are ordered 
-# order -> we can access the vlaue using indices
 
 lort = list_of_random_things
 lort[0] = 10
@@ -32,3 +34,10 @@ print('The smallest number in the list {} is {}'.format(sorted(numbers), min(num
 # Join method joins the elements of the given list with the separator defined before the method.
 list_random = " ".join(str(list_of_random_things))
 print(list_random)
+
+
+# List Comprehension
+squares = [(i**2) for i in range(1,11)]
+even_squares = [(i**2) for i in range(0,11) if (i%2==0)]
+print(squares)
+print(even_squares)
