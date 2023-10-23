@@ -1,5 +1,6 @@
 from . import Solution
 
-Sol = Solution()
-res = Sol.longestCommonPrefix(["flower","flow","flight"])
-assert res=="fl"
+def test_solution():
+    Sol = Solution()
+    res = Sol.longestCommonPrefix(["flower","flow","flight"])
+    assert res=="fl"
