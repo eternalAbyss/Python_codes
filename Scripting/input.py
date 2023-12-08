@@ -1,7 +1,7 @@
-num = int(float(input('Enter a number: ')))
-print('hello ' * num)
+num = int(float(input("Enter a number: ")))
+print("hello " * num)
 
-# try: 
+# try:
 #     x = int(input('Enter a number: '))
 # except ValueError:
 #     print("The Error is ValueError!")
@@ -10,10 +10,9 @@ print('hello ' * num)
 # finally:
 #     print("Attempted Input!\n")
 
-try: 
-    x = int(input('Enter a number: '))
+try:
+    x = int(input("Enter a number: "))
 except Exception as e:
-    print('The Error is {}!'.format(e))
+    print("The Error is {}!".format(e))
 finally:
     print("Attempted Input!\n")
-

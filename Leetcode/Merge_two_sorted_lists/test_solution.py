@@ -1,18 +1,19 @@
-from . import Solution, ListNode
+from . import ListNode, Solution
+
 
 def test_solution():
     Sol = Solution()
     cur = list1 = ListNode()
-    for element in [1,2,4]:
+    for element in [1, 2, 4]:
         cur = ListNode(element)
         cur = cur.next
     cur = list2 = ListNode()
-    for element in [1,3,4]:
+    for element in [1, 3, 4]:
         cur = ListNode(element)
         cur = cur.next
 
     cur = list3 = ListNode()
-    for element in [1,1,2,3,4,4]:
+    for element in [1, 1, 2, 3, 4, 4]:
         cur = ListNode(element)
         cur = cur.next
 

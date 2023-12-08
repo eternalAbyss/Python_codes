@@ -1,18 +1,17 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         is_closed = False
-        if len(s)%2!=0:
+        if len(s) % 2 != 0:
             pass
-        else :
-            brackets = {
-                ')' : '(',
-                '}' : '{',
-                ']' : '['
-            }
+        else:
+            brackets = {")": "(", "}": "{", "]": "["}
             brackets_order = list()
             try:
                 for bracket in list(s):
-                    if bracket in brackets.keys() and brackets[bracket] == brackets_order[-1]:
+                    if (
+                        bracket in brackets.keys()
+                        and brackets[bracket] == brackets_order[-1]
+                    ):
                         brackets_order.pop()
                     else:
                         brackets_order.append(bracket)
