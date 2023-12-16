@@ -21,11 +21,8 @@ class Solution:
                 # Looping through the further numbers to make the final dictionary
                 for i in range(1, len(in_nums)):
                     if i == len(in_nums) - 1:
-                        num_dict[in_nums[i]] = len(arr) - (arr.index(
-                            in_nums[i]))
-                        print(len(arr) - (arr.index(in_nums[i]) - 1))
+                        num_dict[in_nums[i]] = len(arr) - (arr.index(in_nums[i]))
                     else:
                         num_dict[in_nums[i]] = arr.index(
                             in_nums[i + 1]) - arr.index(in_nums[i])
-                print(num_dict)
         return max(zip(num_dict.values(), num_dict.keys()))[1]
