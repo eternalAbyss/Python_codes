@@ -1,5 +1,4 @@
 class Solution:
-
     def findSpecialInteger(self, arr: list[int]) -> int:
         arr_len = len(arr)
         # check if the array is just one number long
@@ -23,6 +22,7 @@ class Solution:
                     if i == len(in_nums) - 1:
                         num_dict[in_nums[i]] = len(arr) - (arr.index(in_nums[i]))
                     else:
-                        num_dict[in_nums[i]] = arr.index(
-                            in_nums[i + 1]) - arr.index(in_nums[i])
+                        num_dict[in_nums[i]] = arr.index(in_nums[i + 1]) - arr.index(
+                            in_nums[i]
+                        )
         return max(zip(num_dict.values(), num_dict.keys()))[1]
