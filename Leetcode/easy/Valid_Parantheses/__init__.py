@@ -1,22 +1,50 @@
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.top = None
+        self.size = 0
+
+    def push(self, value):
+        self.size += 1
+        new_node = Node(value)
+        if self.top is None:
+            self.top = new_node
+        else:
+            new_node.next = self.top # type: ignore
+            self.top = new_node
+
+    def pop(self):
+        if self.top is None:
+            return None
+        self.size -= 1
+        popped_value = self.top.value
+        self.top = self.top.next
+        return popped_value
+
+    def peek(self):
+        if self.top is None:
+            return None
+        return self.top.value
+
 class Solution:
     def isValid(self, s: str) -> bool:
-        is_closed = False
         if len(s) % 2 != 0:
-            pass
-        else:
-            brackets = {")": "(", "}": "{", "]": "["}
-            brackets_order = list()
-            try:
-                for bracket in list(s):
-                    if (
-                        bracket in brackets.keys()
-                        and brackets[bracket] == brackets_order[-1]
-                    ):
-                        brackets_order.pop()
-                    else:
-                        brackets_order.append(bracket)
-                if len(brackets_order) == 0:
-                    is_closed = True
-            except:
-                is_closed = False
-        return is_closed
+            return False
+
+        stack = Stack()
+        brackets = {")": "(", "}": "{", "]": "["}
+
+        for char in s:
+            if brackets.get(char, char) == stack.peek():
+                stack.pop()
+            else:
+                stack.push(char)
+
+        # If the stack is empty, all brackets were matched
+        # If not, there are unmatched brackets
+        result = stack.size == 0
+        return result
